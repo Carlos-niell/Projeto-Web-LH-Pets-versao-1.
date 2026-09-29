@@ -1,0 +1,32 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.dbmdl
+*.log
+*.opendb
+*.VC.db
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+
+# Environment / secrets
+appsettings.Development.json
+appsettings.Local.json
+.env
+.env.*
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Git
+.git/
