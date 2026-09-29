@@ -1,19 +1,16 @@
-namespace Projeto_Web_Lh_Pets_Alunos;
+using Projeto_Web_Lh_Pets_Alunos;
 
-public class Program
-{
-    public static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
-        var app = builder.Build();
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
-        app.MapGet("/", () => "Projeto Web – LH Pets
-versão 1.");
+var banco = new Banco();
 
-    app.useStaticFiles();
-    app.MapGet("/index",(HTTPContext context) => {
-        context.Response.Redirect("/index.html" false);
+app.UseStaticFiles();
 
-        app.Run();
-    }
-}
+app.MapGet("/", () => "LH Pets - Protótipo 1");
+
+app.MapGet("/index", () => Results.Redirect("/index.html"));
+
+app.MapGet("/listaClientes", () => Results.Content(banco.GetListaString(), "text/html"));
+
+app.Run();
